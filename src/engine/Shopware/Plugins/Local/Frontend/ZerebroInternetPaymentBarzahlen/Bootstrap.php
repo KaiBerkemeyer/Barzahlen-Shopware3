@@ -23,7 +23,7 @@
 
 class Shopware_Plugins_Frontend_ZerebroInternetPaymentBarzahlen_Bootstrap extends Shopware_Components_Plugin_Bootstrap {
 
-  const CURRENT_VERSION = '1.0.0';
+  const CURRENT_VERSION = '1.0.1';
 
   /**
    * Install methods. Calls sub methods for a successful installation.
@@ -190,7 +190,7 @@ class Shopware_Plugins_Frontend_ZerebroInternetPaymentBarzahlen_Bootstrap extend
    * @return array with all information
    */
   public function getInfo() {
-    $img = 'http://cdn.barzahlen.de/images/barzahlen_logo.png';
+    $img = 'https://cdn.barzahlen.de/images/barzahlen_logo.png';
     return array(
       'version' => $this->getVersion(),
       'autor' => 'Zerebro Internet GmbH',
@@ -274,7 +274,7 @@ class Shopware_Plugins_Frontend_ZerebroInternetPaymentBarzahlen_Bootstrap extend
     $payment = Shopware()->Payments()->fetchRow(array('name=?' => 'barzahlen'));
     $config = Shopware()->Plugins()->Frontend()->ZerebroInternetPaymentBarzahlen()->Config();
 
-    $description = '<img src="http://cdn.barzahlen.de/images/barzahlen_logo.png" style="height: 45px;"/><br/>';
+    $description = '<img src="https://cdn.barzahlen.de/images/barzahlen_logo.png" style="height: 45px;"/><br/>';
     $description .= '<p id="payment_desc">Mit Abschluss der Bestellung bekommen Sie einen Zahlschein angezeigt, den Sie sich ausdrucken oder auf Ihr Handy schicken lassen k&ouml;nnen. Bezahlen Sie den Online-Einkauf mit Hilfe des Zahlscheins an der Kasse einer Barzahlen-Partnerfiliale.';
 
     if($config->barzahlenSandbox) {
@@ -286,7 +286,7 @@ class Shopware_Plugins_Frontend_ZerebroInternetPaymentBarzahlen_Bootstrap extend
 
     for($i = 1; $i <= 10; $i++) {
       $count = str_pad($i,2,"0",STR_PAD_LEFT);
-      $description .= '<img src="http://cdn.barzahlen.de/images/barzahlen_partner_'.$count.'.png" alt="" style="vertical-align: middle; height: 25px;" />';
+      $description .= '<img src="https://cdn.barzahlen.de/images/barzahlen_partner_'.$count.'.png" alt="" style="vertical-align: middle; height: 25px;" />';
     }
 
     $newData = array('additionaldescription' => $description);
