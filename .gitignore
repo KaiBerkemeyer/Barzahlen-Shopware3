@@ -3,3 +3,4 @@ cache.properties
 /build/*
 /src/files/log/*
 barzahlen.log
+/barzahlen_shopware3_plugin_*
